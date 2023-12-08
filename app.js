@@ -31,18 +31,14 @@ function sign(token) {
   })
 }
 
-
-//推送微信通知
-function wechatSend(type, msg) {
-  const params = {
-    token: qs.token,
-    title: type,
-    content: msg
-  }
-  axios.get('http://www.pushplus.plus/send', { params }).then((res) => {
-    console.log(res)
-    if (res && res.data && res.data.code === 200) {
-      console.log(type + ',发送微信推送成功')
-    }
-  })
+function sendEmail(type,msg){
+    mailOptions.subject += type
+    mailOptions.text = msg
+    tansporter.sendMail(mailOptions,(err,data) => {
+        if(err){
+            console.log("发送邮件失败");
+        }else{
+            console.log("发送邮件成功");
+        }
+    })
 }
