@@ -36,15 +36,3 @@ function sign(token) {
   })
 }
 
-//发送邮件
-function sendEmail(type,msg){
-    mailOptions.subject += type
-    mailOptions.text = msg
-    tansporter.sendMail(mailOptions,(err,data) => {
-        if(err){
-            console.log("发送邮件失败");
-        }else{
-            console.log("发送邮件成功");
-        }
-    })
-}
