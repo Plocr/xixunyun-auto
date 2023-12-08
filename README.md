@@ -1,9 +1,8 @@
 # xixunyun-auto
-🏷️ 习讯云自动签到、提交健康日报，简单配置，每天早上8点自动签到，自动提交每日健康日报
+🏷️ 习讯云自动签到、每天早上8点自动签到。
 
 #### 😶‍🌫️配置要求
 
-- 需要push+的 token，
 - 配置信息参数
   - **<u>ACCOUNT</u>**--账号
   - **<u>PASSWORD</u>**--密码
@@ -12,7 +11,6 @@
   - **<u>ADDRESS_NAME</u>**--地址名，如xxx公司
   - **<u>LONGITUDE</u>**--经度
   - **<u>LATITUDE</u>**--纬度
-  - **<u>TOKEN</u>**--push+ 的token，用于签到后发送微信通知 （http://www.pushplus.plus/）
   - **<u>CODE</u>**--邮件通知，可选
   - **<u>EMAIL</u>**--邮件通知地址，可选
 
