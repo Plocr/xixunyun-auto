@@ -6,6 +6,11 @@ const signdata = qs.signdata
 const headers = qs.headers
 const loginApi = qs.loginApi
 
+// 签到并提交每日体温报告 
+login().then((token) => {
+  sign(token)
+})
+
 //登录
 function login() {
   return new Promise((resolve, reject) => {
@@ -25,8 +30,8 @@ function sign(token) {
   axios.post(signApi, signdata, { headers }).then((res) => {
     if (res && res.data) {
       console.log(res.data.code + ',' + res.data.message)
-      wechatSend('习讯云签到提交', res.data.message)
-      // sendEmail('习讯云签到提交', res.data.message)
+      //wechatSend('习讯云签到提交', res.data.message)
+      sendEmail('习讯云签到提交', res.data.message)
     }
   })
 }
