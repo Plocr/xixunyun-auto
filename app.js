@@ -31,6 +31,7 @@ function sign(token) {
   })
 }
 
+//发送邮件
 function sendEmail(type,msg){
     mailOptions.subject += type
     mailOptions.text = msg
