@@ -15,6 +15,7 @@
   - **<u>EMAIL</u>**--邮件通知地址，可选
 
 #### 配置教程参数(Github-Secrets)
+学校id：https://oss-resume.xixunyun.com/school_map/web202401.json
 
 1. ![](https://ftp.bmp.ovh/imgs/2022/02/b259b4e2d9e504d4.png)
 
