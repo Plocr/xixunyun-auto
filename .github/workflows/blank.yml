@@ -8,19 +8,17 @@ on:
     - cron: 0 0 * * *  # 每天UTC 0点（carlifornia）
     - cron: 0 12 * * * # 每天UTC 12点
 
-
 jobs:
   sign:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-      # 使用 node:10
-      - name: use Node.js 10.x
+      - name: 使用 Node.js 16
         uses: actions/setup-node@v1
         with:
-          node-version: 10.x
-      # npm install
+          node-version: 16
+      - name: 安装依赖
+        run: npm install
       - name: 签到日志
         env:
           ACCOUNT: ${{ secrets.ACCOUNT }}
@@ -34,5 +32,4 @@ jobs:
           CODE: ${{ secrets.CODE }}
           TOKEN: ${{ secrets.TOKEN }}
         run: |
-          npm install
           node app.js
