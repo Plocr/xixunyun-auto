@@ -1,23 +1,27 @@
-name: 自动签到
+name: 习讯云自动签到
 
 on:
+  push:
+    branches:
+      - main
   schedule:
-    - cron: '0 0,12 * * *' # 每天UTC 0点和12点触发
+    - cron: 0 0 * * *  # 每天UTC 0点（carlifornia）
+    - cron: 0 12 * * * # 每天UTC 12点
+
 
 jobs:
   sign:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout 代码
-        uses: actions/checkout@v2
-
-      - name: 设置 Node.js 环境
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
+      # 使用 node:10
+      - name: use Node.js 10.x
+        uses: actions/setup-node@v1
         with:
           node-version: 10.x
-
-      - name: 安装依赖并签到
+      # npm install
+      - name: 签到日志
         env:
           ACCOUNT: ${{ secrets.ACCOUNT }}
           PASSWORD: ${{ secrets.PASSWORD }}
@@ -30,5 +34,5 @@ jobs:
           CODE: ${{ secrets.CODE }}
           TOKEN: ${{ secrets.TOKEN }}
         run: |
-          npm ci --silent
-          node app.js > sign_log.txt 2>&1 || echo "签到失败，请检查日志"
+          npm install
+          node app.js
