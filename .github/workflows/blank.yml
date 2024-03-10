@@ -11,12 +11,12 @@ jobs:
     steps:
       - name: Checkout 代码
         uses: actions/checkout@v2
-      
+
       - name: 设置 Node.js 环境
         uses: actions/setup-node@v2
         with:
           node-version: 10.x
-      
+
       - name: 安装依赖并签到
         env:
           ACCOUNT: ${{ secrets.ACCOUNT }}
