@@ -7,7 +7,7 @@
   - **<u>ACCOUNT</u>**--账号
   - **<u>PASSWORD</u>**--密码
   - **<u>SCHOOL_ID</u>**--学校id, 搜索自己学校（ 学校列表.json ）
-  - **<u>ADDRESS</u>**--地址，如xx省xx市xx街道
+  - **<u>ADDRESS</u>**--地址，如xx省xx市x街道
   - **<u>ADDRESS_NAME</u>**--地址名，如xx公司
   - **<u>LONGITUDE</u>**--经度
   - **<u>LATITUDE</u>**--纬度
